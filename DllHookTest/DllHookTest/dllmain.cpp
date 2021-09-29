@@ -11,33 +11,7 @@ int h_sum(int x, int y)
 	return x + y;
 }
 
-/*typedef int(*sum)(int a1, int a2);
-int h_sum(int a, int b)
-{
-	a += 500;
-	b += 500;
-	sum o_sum = (sum)h_sum;
-	return o_sum(a, b);
-}
 
-BOOL WINAPI DllMain( HMODULE hModule, DWORD  reason,LPVOID lpReserved)
-{
-	switch (reason)
-	{
-		case DLL_PROCESS_ATTACH:
-		{
-			SigScan scan;
-			DWORD sum_Addr = scan.FindPattern("AppToHook.exe", "\x55\x8B\xEC\x8B\x45\x08\x03\x45\x0C", "xxxxxxxxx");
-			DetourTransactionBegin();
-			DetourUpdateThread(GetCurrentThread());
-			DetourAttach(&(LPVOID&)sum_Addr, &h_sum);
-			DetourTransactionCommit();
-			break;
-		}
-	}
-	return TRUE;
-}
-*/
 BOOL WINAPI DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved)
 {
 	// store the address of sum() in testprogram.exe here.
